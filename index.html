@@ -8,6 +8,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+    
+    .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.logo-grid img {
+    width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.logo-grid img:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+    opacity: 1;
+}
+    
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -67,19 +91,19 @@ a {
 
 <div class="container">
 
-    <div class="card">
-<h2>Clients Worked With</h2>
+<div class="card">
+<h2 style="text-align:center;">Trusted By</h2>
 
-<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+<div class="logo-grid">
 
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Salesforce</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Pinterest</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Okta</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">DTCC</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Logitech</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">RCCL</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Equinix</span>
-<span style="background:#0f172a;padding:10px 15px;border-radius:8px;">Zillow</span>
+<img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce">
+<img src="https://logo.clearbit.com/pinterest.com" alt="Pinterest">
+<img src="https://logo.clearbit.com/okta.com" alt="Okta">
+<img src="https://logo.clearbit.com/dtcc.com" alt="DTCC">
+<img src="https://logo.clearbit.com/logitech.com" alt="Logitech">
+<img src="https://logo.clearbit.com/royalcaribbean.com" alt="RCCL">
+<img src="https://logo.clearbit.com/equinix.com" alt="Equinix">
+<img src="https://logo.clearbit.com/zillow.com" alt="Zillow">
 
 </div>
 </div>
