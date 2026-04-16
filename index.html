@@ -84,6 +84,20 @@ body {
     transform: translateY(0);
 }
 
+/* METRICS */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.metric h3 {
+    font-size: 42px;
+    color: #38bdf8;
+}
+
 /* GRID */
 .grid {
     display: grid;
@@ -162,6 +176,28 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 
 <div class="container">
 
+<!-- METRICS -->
+<div class="section">
+<h2 style="text-align:center;">Proven Results</h2>
+
+<div class="metrics">
+<div class="metric">
+<h3 class="counter" data-target="8">0</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="metric">
+<h3 class="counter" data-target="60">0</h3>
+<p>Candidates Placed</p>
+</div>
+
+<div class="metric">
+<h3 class="counter" data-target="20">0</h3>
+<p>Clients Supported</p>
+</div>
+</div>
+</div>
+
 <!-- ABOUT -->
 <div class="section" id="about">
 <h2>About Me</h2>
@@ -178,8 +214,8 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 <div class="card">Full Cycle Recruitment</div>
 <div class="card">Job Boards (Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter)</div>
 <div class="card">ATS (JobDiva, Ceipal)</div>
-<div class="card">VMS (Prowand/Magnit, Fieldglass, Workday (VNDLY), Econometrix, IQN, and Beeline)</div>
-<div class="card">Contract / C2C / 1099 / T4 / Incorp / W2 / Full-Time Hiring</div>
+<div class="card">VMS (Fieldglass, VNDLY, Beeline, IQN)</div>
+<div class="card">Contract / C2C / 1099 / T4 / W2 / Full-Time Hiring</div>
 <div class="card">Niche Talent Sourcing</div>
 </div>
 </div>
@@ -210,7 +246,7 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 <span>Equinix</span>
 <span>Zillow</span>
 <span>Avanade</span>
-<span>Southern California Edison (SCE)</span>
+<span>Southern California Edison</span>
 <span>Solidigm</span>
 </div>
 </div>
@@ -245,6 +281,8 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 </div>
 
 <script>
+
+// SCROLL ANIMATION
 const sections = document.querySelectorAll('.section');
 
 window.addEventListener('scroll', () => {
@@ -254,6 +292,29 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// COUNTER ANIMATION (~3 sec)
+const counters = document.querySelectorAll('.counter');
+const speed = 3000;
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / (speed / 20);
+
+    const updateCount = () => {
+        const count = +counter.innerText;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target + "+";
+        }
+    };
+
+    updateCount();
+});
+
 </script>
 
 </body>
