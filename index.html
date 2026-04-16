@@ -167,12 +167,25 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-<h1>I Help Companies Hire <span>Top Tech Talent</span></h1>
+
+<h3 style="opacity:0.7; margin-bottom:10px;">Senior Technical Recruiter</h3>
+
+<h1 style="margin-top:0;">
+<span style="color:#38bdf8;">Geet Chandra Singha</span>
+</h1>
+
+<h2 style="font-size:28px; margin-top:10px;">
+<span id="typing-text"></span>
+</h2>
+
 <p>
 Specialized in US & Canada recruitment, delivering high-quality candidates across IT, Engineering, and niche tech roles.
 </p>
+
 <a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
+
 </div>
+    
 
 <div class="container">
 
@@ -281,7 +294,27 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 </div>
 
 <script>
+<script>
 
+// TYPING EFFECT
+const text = "I Help Companies Hire Top Tech Talent";
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
+    }
+}
+
+// Start typing when page loads
+window.onload = () => {
+    typeEffect();
+};
+
+</script>
+    
 // SCROLL ANIMATION
 const sections = document.querySelectorAll('.section');
 
@@ -293,9 +326,9 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// COUNTER ANIMATION (~3 sec)
+// COUNTER ANIMATION (~5 sec)
 const counters = document.querySelectorAll('.counter');
-const speed = 3000;
+const speed = 5000;
 
 counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
