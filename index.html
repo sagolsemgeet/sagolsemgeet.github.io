@@ -41,20 +41,6 @@ body {
     padding: 100px 20px;
 }
 
-.hero h1 {
-    font-size: 48px;
-}
-
-.hero span {
-    color: #38bdf8;
-}
-
-.hero p {
-    max-width: 600px;
-    margin: auto;
-    opacity: 0.8;
-}
-
 /* BUTTON */
 .btn {
     margin-top: 20px;
@@ -64,6 +50,17 @@ body {
     text-decoration: none;
     color: white;
     display: inline-block;
+}
+
+/* CURSOR */
+#typing-text::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,50%,100% {opacity:1;}
+    25%,75% {opacity:0;}
 }
 
 /* SECTION */
@@ -88,8 +85,8 @@ body {
 .metrics {
     display: flex;
     justify-content: space-around;
-    text-align: center;
     flex-wrap: wrap;
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -138,10 +135,6 @@ body {
     padding: 60px 20px;
 }
 
-.cta h2 {
-    font-size: 32px;
-}
-
 .footer {
     text-align: center;
     padding: 20px;
@@ -168,15 +161,11 @@ body {
 <!-- HERO -->
 <div class="hero">
 
-<h3 style="opacity:0.7; margin-bottom:10px;">Senior Technical Recruiter</h3>
+<h3 style="opacity:0.7;">Senior Technical Recruiter</h3>
 
-<h1 style="margin-top:0;">
-<span style="color:#38bdf8;">Geet Chandra Singha</span>
-</h1>
+<h1><span style="color:#38bdf8;">Geet Chandra Singha</span></h1>
 
-<h2 style="font-size:28px; margin-top:10px;">
-<span id="typing-text"></span>
-</h2>
+<h2><span id="typing-text"></span></h2>
 
 <p>
 Specialized in US & Canada recruitment, delivering high-quality candidates across IT, Engineering, and niche tech roles.
@@ -185,7 +174,6 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 <a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
 
 </div>
-    
 
 <div class="container">
 
@@ -201,12 +189,12 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 
 <div class="metric">
 <h3 class="counter" data-target="60">0</h3>
-<p>Candidates Placed</p>
+<p>Successful Placements</p>
 </div>
 
 <div class="metric">
 <h3 class="counter" data-target="20">0</h3>
-<p>Clients Supported</p>
+<p>Clients Served</p>
 </div>
 </div>
 </div>
@@ -214,10 +202,7 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 <!-- ABOUT -->
 <div class="section" id="about">
 <h2>About Me</h2>
-<p>
-Senior Technical Recruiter with 8+ years of experience supporting Fortune 500 and high-growth companies.
-Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
-</p>
+<p>Senior Technical Recruiter with 8+ years of experience supporting Fortune 500 and high-growth companies.</p>
 </div>
 
 <!-- SERVICES -->
@@ -225,11 +210,9 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 <h2>How I Help</h2>
 <div class="grid">
 <div class="card">Full Cycle Recruitment</div>
-<div class="card">Job Boards (Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter)</div>
-<div class="card">ATS (JobDiva, Ceipal)</div>
-<div class="card">VMS (Fieldglass, VNDLY, Beeline, IQN)</div>
-<div class="card">Contract / C2C / 1099 / T4 / W2 / Full-Time Hiring</div>
-<div class="card">Niche Talent Sourcing</div>
+<div class="card">ATS & Job Boards Expertise</div>
+<div class="card">VMS Hiring</div>
+<div class="card">Contract & Full-Time Hiring</div>
 </div>
 </div>
 
@@ -242,7 +225,6 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 <span>Cloud Engineers</span>
 <span>QA / SDET</span>
 <span>DevOps Engineers</span>
-<span>Business Analysts</span>
 </div>
 </div>
 
@@ -256,35 +238,13 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 <span>DTCC</span>
 <span>Logitech</span>
 <span>RCCL</span>
-<span>Equinix</span>
-<span>Zillow</span>
-<span>Avanade</span>
-<span>Southern California Edison</span>
-<span>Solidigm</span>
-</div>
-</div>
-
-<!-- BOOLEAN -->
-<div class="section">
-<h2>Advanced Sourcing</h2>
-<div class="boolean">
-("Java Developer" OR "Backend Engineer") AND (Spring OR Microservices) AND (AWS OR Azure)
 </div>
 </div>
 
 <!-- CTA -->
 <div class="cta">
 <h2>Looking to Hire Top Talent?</h2>
-<p>Let’s connect and discuss your hiring needs.</p>
 <a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
-</div>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-<h2>Contact</h2>
-<p>Email: geetchandrasingha@gmail.com</p>
-<p>Phone: +1-812-356-2720</p>
-<p><a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank" style="color:#38bdf8;">LinkedIn</a></p>
 </div>
 
 </div>
@@ -294,30 +254,9 @@ Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 </div>
 
 <script>
-<script>
 
-// TYPING EFFECT
-const text = "I Help Companies Hire Top Tech Talent";
-let index = 0;
-
-function typeEffect() {
-    if (index < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 50);
-    }
-}
-
-// Start typing when page loads
-window.onload = () => {
-    typeEffect();
-};
-
-</script>
-    
 // SCROLL ANIMATION
 const sections = document.querySelectorAll('.section');
-
 window.addEventListener('scroll', () => {
     sections.forEach(sec => {
         if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -326,27 +265,64 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// COUNTER ANIMATION (~5 sec)
+// COUNTER (5 seconds)
 const counters = document.querySelectorAll('.counter');
 const speed = 5000;
 
 counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
+    const target = +counter.dataset.target;
     const increment = target / (speed / 20);
 
-    const updateCount = () => {
+    const update = () => {
         const count = +counter.innerText;
-
         if (count < target) {
             counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 20);
+            setTimeout(update, 20);
         } else {
             counter.innerText = target + "+";
         }
     };
-
-    updateCount();
+    update();
 });
+
+// ROTATING TYPING TEXT
+const texts = [
+  "I Help Companies Hire Top Tech Talent",
+  "I Deliver High-Quality Candidates Fast",
+  "I Specialize in US & Canada Recruitment",
+  "I Build Reliable Talent Pipelines"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const current = texts[textIndex];
+
+    if (!isDeleting) {
+        document.getElementById("typing-text").innerHTML =
+            current.substring(0, charIndex++);
+    } else {
+        document.getElementById("typing-text").innerHTML =
+            current.substring(0, charIndex--);
+    }
+
+    let speed = isDeleting ? 40 : 70;
+
+    if (!isDeleting && charIndex === current.length) {
+        speed = 1500;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        speed = 500;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+window.onload = typeEffect;
 
 </script>
 
