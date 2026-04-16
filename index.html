@@ -3,17 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Geet Chandra Singha | Senior Technical Recruiter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-    
-    .logo-grid {
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #0b1220;
+    color: #e2e8f0;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 24px;
+    background: #38bdf8;
+    color: #020617;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-3px);
+}
+
+/* SECTION */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.card {
+    background: rgba(30,41,59,0.6);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    animation: fadeUp 1s ease;
+}
+
+/* METRICS */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.metric h3 {
+    font-size: 32px;
+    color: #38bdf8;
+}
+
+/* LOGOS */
+.logo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 25px;
-    align-items: center;
     margin-top: 25px;
 }
 
@@ -21,138 +92,102 @@
     width: 100%;
     max-height: 50px;
     object-fit: contain;
-    filter: grayscale(100%) brightness(0.8);
-    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    transition: 0.3s;
     opacity: 0.7;
 }
 
 .logo-grid img:hover {
-    filter: grayscale(0%) brightness(1);
+    filter: grayscale(0%);
     transform: scale(1.1);
     opacity: 1;
 }
-    
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: #e2e8f0;
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-h2 {
-    color: #38bdf8;
-}
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 40px 0;
-}
-.card {
-    background: #1e293b;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-}
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-.btn:hover {
-    background: #0ea5e9;
-}
-a {
-    color: #38bdf8;
-    text-decoration: none;
-}
+
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
     <h1>Geet Chandra Singha</h1>
     <p>Senior Technical Recruiter | US & Canada Staffing Expert</p>
-    <a href="resume.pdf" download class="btn">Download Resume</a>
-</header>
+    <a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
+</div>
 
 <div class="container">
 
+<!-- METRICS -->
 <div class="card">
-<h2 style="text-align:center;">Trusted By</h2>
-
-<div class="logo-grid">
-
-<img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce">
-<img src="https://logo.clearbit.com/pinterest.com" alt="Pinterest">
-<img src="https://logo.clearbit.com/okta.com" alt="Okta">
-<img src="https://logo.clearbit.com/dtcc.com" alt="DTCC">
-<img src="https://logo.clearbit.com/logitech.com" alt="Logitech">
-<img src="https://logo.clearbit.com/royalcaribbean.com" alt="RCCL">
-<img src="https://logo.clearbit.com/equinix.com" alt="Equinix">
-<img src="https://logo.clearbit.com/zillow.com" alt="Zillow">
-
+<h2 style="text-align:center;">Impact & Achievements</h2>
+<div class="metrics">
+<div class="metric">
+<h3>8+</h3>
+<p>Years Experience</p>
+</div>
+<div class="metric">
+<h3>500+</h3>
+<p>Candidates Placed</p>
+</div>
+<div class="metric">
+<h3>50+</h3>
+<p>Clients Supported</p>
 </div>
 </div>
-    
+</div>
+
+<!-- ABOUT -->
 <div class="card">
 <h2>About Me</h2>
 <p>
-Results-driven Senior Technical Recruiter with 8+ years of experience in US & Canadian staffing.
-Specialized in full-cycle recruitment, VMS hiring, and sourcing top-tier IT talent across W2, C2C, and T4 models.
+Results-driven Senior Technical Recruiter with expertise in US & Canadian staffing,
+VMS hiring, and full-cycle recruitment. Proven success delivering top-tier talent
+for Fortune 500 and high-growth companies.
 </p>
 </div>
 
+<!-- SKILLS -->
 <div class="card">
 <h2>Core Expertise</h2>
 <ul>
 <li>Full Lifecycle Recruitment</li>
-<li>VMS: Fieldglass, VNDLY, Beeline, IQN</li>
+<li>VMS: Fieldglass, VNDLY, Beeline</li>
 <li>ATS: JobDiva</li>
-<li>Sourcing: LinkedIn RPS, Dice, Monster</li>
-<li>Client Handling & Stakeholder Management</li>
+<li>Boolean & Passive Sourcing</li>
+<li>W2, C2C, T4 Hiring</li>
 </ul>
 </div>
 
+<!-- CLIENTS -->
 <div class="card">
-<h2>Professional Experience</h2>
-<p><strong>Senior Technical Recruiter – eTeam</strong> (2021–Present)</p>
-<ul>
-<li>Worked with clients like Pinterest, Salesforce, Okta</li>
-<li>Handled high-volume IT & Engineering hiring</li>
-<li>Managed end-to-end recruitment lifecycle</li>
-</ul>
-
-<p><strong>Senior Technical Recruiter – SwaBz</strong> (2016–2020)</p>
-<ul>
-<li>Expert in Contract, C2H, Full-time hiring</li>
-<li>Strong experience in US & Canada recruitment</li>
-</ul>
+<h2 style="text-align:center;">Trusted By</h2>
+<div class="logo-grid">
+<img src="https://logo.clearbit.com/salesforce.com">
+<img src="https://logo.clearbit.com/pinterest.com">
+<img src="https://logo.clearbit.com/okta.com">
+<img src="https://logo.clearbit.com/logitech.com">
+<img src="https://logo.clearbit.com/equinix.com">
+<img src="https://logo.clearbit.com/zillow.com">
+</div>
 </div>
 
+<!-- CONTACT -->
 <div class="card">
 <h2>Contact</h2>
 <p>Email: geetchandrasingha@gmail.com</p>
 <p>Phone: +1-812-356-2720</p>
-<p>
-LinkedIn: 
-<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">
-View Profile
-</a>
-</p>
+<p><a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">LinkedIn Profile</a></p>
 </div>
 
 </div>
