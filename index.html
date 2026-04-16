@@ -15,7 +15,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #0f172a;
     color: white;
-    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -23,22 +22,25 @@ body {
     position: sticky;
     top: 0;
     background: rgba(15,23,42,0.9);
-    backdrop-filter: blur(10px);
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
 }
 
 /* HERO */
 .hero {
     text-align: center;
     padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 56px; /* increased */
+    margin-bottom: 5px;
+}
+
+.hero h3 {
+    opacity: 0.7;
+    margin-top: 0;
 }
 
 /* BUTTON */
@@ -49,12 +51,17 @@ body {
     border-radius: 30px;
     text-decoration: none;
     color: white;
-    display: inline-block;
 }
 
-/* CURSOR */
-#typing-text::after {
-    content: "|";
+/* TYPING FIX */
+.typing-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 5px;
     animation: blink 1s infinite;
 }
 
@@ -71,23 +78,13 @@ body {
 
 .section {
     margin: 60px 0;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* METRICS */
 .metrics {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
     text-align: center;
-    margin-top: 20px;
 }
 
 .metric h3 {
@@ -121,57 +118,31 @@ body {
     border-radius: 20px;
 }
 
-/* BOOLEAN */
-.boolean {
-    background: #020617;
-    padding: 15px;
-    border-radius: 10px;
-    font-family: monospace;
-}
-
-/* CTA */
-.cta {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.6;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
 <div><strong>Geet</strong></div>
-<div>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#roles">Roles</a>
-<a href="#clients">Clients</a>
-<a href="#contact">Contact</a>
-</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
 
-<h3 style="opacity:0.7;">Senior Technical Recruiter</h3>
+<h1 style="color:#38bdf8;">Geet Chandra Singha</h1>
+<h3>Senior Technical Recruiter</h3>
 
-<h1><span style="color:#38bdf8;">Geet Chandra Singha</span></h1>
-
-<h2><span id="typing-text"></span></h2>
+<h2>
+<span class="typing-wrapper" id="typing-text"></span>
+<span class="cursor">|</span>
+</h2>
 
 <p>
-Specialized in US & Canada recruitment, delivering high-quality candidates across IT, Engineering, and niche tech roles.
+Specialized in US & Canada recruitment delivering high-quality candidates across IT & Engineering.
 </p>
 
-<a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
+<a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
 
 </div>
 
@@ -200,37 +171,51 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 </div>
 
 <!-- ABOUT -->
-<div class="section" id="about">
+<div class="section">
 <h2>About Me</h2>
-<p>Senior Technical Recruiter with 8+ years of experience supporting Fortune 500 and high-growth companies.</p>
+<p>
+Results-driven Senior Technical Recruiter with 8+ years of experience in US and Canadian staffing. 
+Proven expertise in full-cycle recruitment, VMS hiring, and sourcing high-quality candidates across IT and engineering domains. 
+Skilled in using ATS platforms like JobDiva and Ceipal, along with job boards such as Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. 
+Strong track record of working with Fortune 500 clients, building talent pipelines, and delivering fast, accurate hiring solutions. 
+Experienced in W2, C2C, T4, 1099, and InCorp hiring models.
+</p>
 </div>
 
 <!-- SERVICES -->
-<div class="section" id="services">
+<div class="section">
 <h2>How I Help</h2>
+
 <div class="grid">
-<div class="card">Full Cycle Recruitment</div>
-<div class="card">ATS & Job Boards Expertise</div>
-<div class="card">VMS Hiring</div>
-<div class="card">Contract & Full-Time Hiring</div>
-</div>
+
+<div class="card">
+ATS & Job Boards:<br>
+Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, Techfetch<br>
+ATS: JobDiva, Ceipal
 </div>
 
-<!-- ROLES -->
-<div class="section" id="roles">
-<h2>Roles I Hire For</h2>
-<div class="tags">
-<span>Software Engineers</span>
-<span>Data Engineers</span>
-<span>Cloud Engineers</span>
-<span>QA / SDET</span>
-<span>DevOps Engineers</span>
+<div class="card">
+VMS:<br>
+Fieldglass, VNDLY, Beeline, IQN, Econometrix, Magnit
 </div>
+
+<div class="card">
+Hiring Models:<br>
+W2, C2C, T4, 1099, InCorp, Full-Time
+</div>
+
+<div class="card">
+Full Cycle Recruitment & Niche Talent Sourcing
+</div>
+
+</div>
+
 </div>
 
 <!-- CLIENTS -->
-<div class="section" id="clients">
+<div class="section">
 <h2>Clients Supported</h2>
+
 <div class="tags">
 <span>Salesforce</span>
 <span>Pinterest</span>
@@ -238,46 +223,33 @@ Specialized in US & Canada recruitment, delivering high-quality candidates acros
 <span>DTCC</span>
 <span>Logitech</span>
 <span>RCCL</span>
-</div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-<h2>Looking to Hire Top Talent?</h2>
-<a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
+<span>Equinix</span>
+<span>Zillow</span>
+<span>Avanade</span>
+<span>Southern California Edison</span>
+<span>Solidigm</span>
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 Geet Chandra Singha
 </div>
 
 <script>
 
-// SCROLL ANIMATION
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-            sec.classList.add('show');
-        }
-    });
-});
-
-// COUNTER (5 seconds)
+// COUNTER 5 sec FIX
 const counters = document.querySelectorAll('.counter');
-const speed = 5000;
+const duration = 5000;
 
 counters.forEach(counter => {
     const target = +counter.dataset.target;
-    const increment = target / (speed / 20);
+    let start = 0;
+    const increment = target / (duration / 50);
 
     const update = () => {
-        const count = +counter.innerText;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(update, 20);
+        start += increment;
+        if (start < target) {
+            counter.innerText = Math.ceil(start);
+            setTimeout(update, 50);
         } else {
             counter.innerText = target + "+";
         }
@@ -285,44 +257,39 @@ counters.forEach(counter => {
     update();
 });
 
-// ROTATING TYPING TEXT
+// ROTATING TEXT FIXED
 const texts = [
-  "I Help Companies Hire Top Tech Talent",
-  "I Deliver High-Quality Candidates Fast",
-  "I Specialize in US & Canada Recruitment",
-  "I Build Reliable Talent Pipelines"
+"I Help Companies Hire Top Tech Talent",
+"I Deliver High-Quality Candidates Fast",
+"I Specialize in US & Canada Recruitment"
 ];
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let i = 0, j = 0, current = "", deleting = false;
 
-function typeEffect() {
-    const current = texts[textIndex];
+function type() {
+    current = texts[i];
 
-    if (!isDeleting) {
-        document.getElementById("typing-text").innerHTML =
-            current.substring(0, charIndex++);
+    if (!deleting) {
+        document.getElementById("typing-text").textContent = current.substring(0, j++);
     } else {
-        document.getElementById("typing-text").innerHTML =
-            current.substring(0, charIndex--);
+        document.getElementById("typing-text").textContent = current.substring(0, j--);
     }
 
-    let speed = isDeleting ? 40 : 70;
-
-    if (!isDeleting && charIndex === current.length) {
-        speed = 1500;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        speed = 500;
+    if (!deleting && j === current.length) {
+        deleting = true;
+        setTimeout(type, 1200);
+        return;
     }
 
-    setTimeout(typeEffect, speed);
+    if (deleting && j === 0) {
+        deleting = false;
+        i = (i + 1) % texts.length;
+    }
+
+    setTimeout(type, deleting ? 40 : 60);
 }
 
-window.onload = typeEffect;
+type();
 
 </script>
 
