@@ -7,8 +7,6 @@
 <title>Geet | Technical Recruiter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -22,7 +20,12 @@ body {
 
 /* NAV */
 .navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,0.9);
     padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* HERO */
@@ -34,30 +37,10 @@ body {
 .hero h1 {
     font-size: 60px;
     color: #38bdf8;
-    margin-bottom: 5px;
 }
 
 .hero h3 {
-    margin-top: 0;
     opacity: 0.7;
-}
-
-/* TYPING FIXED */
-.typing-line {
-    display: inline-block;
-    position: relative;
-}
-
-.typing-line::after {
-    content: "|";
-    margin-left: 6px;
-    color: #38bdf8;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%,50%,100% {opacity:1;}
-    25%,75% {opacity:0;}
 }
 
 /* BUTTON */
@@ -68,10 +51,28 @@ body {
     border-radius: 30px;
     text-decoration: none;
     color: white;
-    display: inline-block;
 }
 
-/* SECTIONS */
+/* CLEAN TYPING FIX */
+.typing-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cursor {
+    width: 2px;
+    height: 1.2em;
+    background: #38bdf8;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,50%,100% {opacity:1;}
+    25%,75% {opacity:0;}
+}
+
+/* SECTION */
 .container {
     width: 85%;
     margin: auto;
@@ -86,6 +87,7 @@ body {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .metric h3 {
@@ -136,7 +138,6 @@ body {
 
 .contact-icons i {
     font-size: 22px;
-    color: #38bdf8;
     transition: 0.3s;
 }
 
@@ -150,7 +151,6 @@ body {
     text-align: center;
     padding: 30px;
     background: #020617;
-    margin-top: 40px;
 }
 
 </style>
@@ -159,25 +159,22 @@ body {
 <body>
 
 <div class="navbar">
-<strong>Geet</strong>
+<div><strong>Geet</strong></div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-
 <h1>Geet Chandra Singha</h1>
 <h3>Senior Technical Recruiter</h3>
 
 <h2 class="typing-line">
 <span id="typing-text"></span>
+<span class="cursor"></span>
 </h2>
 
-<p>
-Specialized in US & Canada recruitment delivering high-quality candidates across IT & Engineering.
-</p>
+<p>Specialized in US & Canada recruitment delivering high-quality candidates across IT & Engineering.</p>
 
 <a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
-
 </div>
 
 <div class="container">
@@ -187,20 +184,9 @@ Specialized in US & Canada recruitment delivering high-quality candidates across
 <h2 style="text-align:center;">Proven Results</h2>
 
 <div class="metrics">
-<div class="metric">
-<h3 class="counter" data-target="8">0</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="metric">
-<h3 class="counter" data-target="60">0</h3>
-<p>Successful Placements</p>
-</div>
-
-<div class="metric">
-<h3 class="counter" data-target="20">0</h3>
-<p>Clients Served</p>
-</div>
+<div class="metric"><h3 class="counter" data-target="8">0</h3><p>Years Experience</p></div>
+<div class="metric"><h3 class="counter" data-target="60">0</h3><p>Successful Placements</p></div>
+<div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients Served</p></div>
 </div>
 </div>
 
@@ -208,9 +194,7 @@ Specialized in US & Canada recruitment delivering high-quality candidates across
 <div class="section">
 <h2>About Me</h2>
 <p>
-Results-driven Senior Technical Recruiter with 8+ years of experience in US and Canadian staffing. 
-Expert in full-cycle recruitment, ATS platforms like JobDiva & Ceipal, and sourcing through Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. 
-Proven success working with Fortune 500 clients, building strong pipelines, and delivering quality hires across W2, C2C, T4, 1099, and InCorp models.
+Results-driven Senior Technical Recruiter with 8+ years of experience in US and Canadian staffing. Proven expertise in full-cycle recruitment, VMS platforms, and sourcing high-quality talent across IT and engineering roles. Skilled in ATS tools like JobDiva and Ceipal, and job boards including Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. Strong track record working with Fortune 500 clients and delivering fast, accurate hiring solutions.
 </p>
 </div>
 
@@ -242,7 +226,6 @@ Full Cycle Recruitment & Niche Talent Sourcing
 </div>
 
 </div>
-
 </div>
 
 <!-- CLIENTS -->
@@ -290,36 +273,32 @@ Full Cycle Recruitment & Niche Talent Sourcing
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-<p>© 2026 Geet Chandra Singha</p>
+© 2026 Geet Chandra Singha
 </div>
 
 <script>
 
 // COUNTER (5 sec)
-const counters = document.querySelectorAll('.counter');
-const duration = 5000;
+document.querySelectorAll('.counter').forEach(counter=>{
+let target=+counter.dataset.target;
+let count=0;
+let step=target/(5000/50);
 
-counters.forEach(counter => {
-    let start = 0;
-    const target = +counter.dataset.target;
-    const increment = target / (duration / 50);
-
-    function update() {
-        start += increment;
-        if (start < target) {
-            counter.innerText = Math.ceil(start);
-            setTimeout(update, 50);
-        } else {
-            counter.innerText = target + "+";
-        }
-    }
-    update();
+function update(){
+count+=step;
+if(count<target){
+counter.innerText=Math.ceil(count);
+setTimeout(update,50);
+}else{
+counter.innerText=target+"+";
+}
+}
+update();
 });
 
-// ROTATING TEXT
-const texts = [
+// SMOOTH TYPING (FIXED)
+const texts=[
 "I Help Companies Hire Top Tech Talent",
 "I Deliver High-Quality Candidates, Fast",
 "I Specialize in US & Canada Recruitment"
@@ -328,26 +307,28 @@ const texts = [
 let i=0,j=0,deleting=false;
 
 function type(){
-    let current=texts[i];
+let current=texts[i];
 
-    if(!deleting){
-        document.getElementById("typing-text").textContent=current.substring(0,j++);
-    } else {
-        document.getElementById("typing-text").textContent=current.substring(0,j--);
-    }
+if(!deleting){
+j+=0.5;
+}else{
+j-=0.6;
+}
 
-    if(!deleting && j===current.length){
-        deleting=true;
-        setTimeout(type,1200);
-        return;
-    }
+document.getElementById("typing-text").textContent=current.substring(0,Math.floor(j));
 
-    if(deleting && j===0){
-        deleting=false;
-        i=(i+1)%texts.length;
-    }
+if(!deleting && j>=current.length){
+deleting=true;
+setTimeout(type,1200);
+return;
+}
 
-    setTimeout(type,deleting?40:60);
+if(deleting && j<=0){
+deleting=false;
+i=(i+1)%texts.length;
+}
+
+requestAnimationFrame(type);
 }
 
 type();
