@@ -4,96 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Geet Chandra Singha | Senior Technical Recruiter</title>
+<title>Geet | Technical Recruiter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* BACKGROUND */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #9333ea, #0ea5e9);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    background: #0f172a;
+    color: white;
+    scroll-behavior: smooth;
 }
 
-/* ANIMATION BACKGROUND */
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+/* NAV */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
 /* HERO */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+.hero span {
+    color: #38bdf8;
 }
 
 .hero p {
-    font-size: 18px;
-    opacity: 0.9;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.8;
 }
 
+/* BUTTON */
 .btn {
     margin-top: 20px;
-    display: inline-block;
-    padding: 14px 26px;
-    background: white;
-    color: #0f172a;
+    padding: 14px 28px;
+    background: linear-gradient(45deg,#38bdf8,#9333ea);
     border-radius: 30px;
-    font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
+    color: white;
+    display: inline-block;
 }
 
-.btn:hover {
-    transform: scale(1.1);
-    background: #e2e8f0;
-}
-
-/* CONTAINER */
+/* SECTION */
 .container {
     width: 85%;
     margin: auto;
-    padding: 40px 0;
 }
 
-/* GLASS CARD */
+.section {
+    margin: 60px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
 .card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    padding: 25px;
-    border-radius: 20px;
-    margin-bottom: 25px;
-    transition: 0.3s;
-    animation: fadeUp 1s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.2);
-}
-
-/* METRICS */
-.metrics {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.metric h3 {
-    font-size: 34px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
 }
 
 /* TAGS */
@@ -101,31 +102,36 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 15px;
 }
 
 .tags span {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
     padding: 8px 14px;
     border-radius: 20px;
-    transition: 0.3s;
 }
 
-.tags span:hover {
-    background: white;
-    color: #0f172a;
-    transform: scale(1.1);
+/* BOOLEAN */
+.boolean {
+    background: #020617;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: monospace;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-@keyframes fadeUp {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
+.cta h2 {
+    font-size: 32px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
 }
 
 </style>
@@ -133,58 +139,64 @@ body {
 
 <body>
 
+<!-- NAV -->
+<div class="navbar">
+<div><strong>Geet</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#roles">Roles</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
-    <h1>Geet Chandra Singha</h1>
-    <p>Senior Technical Recruiter | US & Canada Staffing Expert</p>
-    <a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
+<h1>I Help Companies Hire <span>Top Tech Talent</span></h1>
+<p>
+Specialized in US & Canada recruitment, delivering high-quality candidates across IT, Engineering, and niche tech roles.
+</p>
+<a href="Geet Chandra Singha.pdf" download class="btn">Download Resume</a>
 </div>
 
 <div class="container">
 
-<!-- METRICS -->
-<div class="card">
-<h2>Impact & Achievements</h2>
-<div class="metrics">
-<div class="metric">
-<h3>8+</h3>
-<p>Years Experience</p>
-</div>
-<div class="metric">
-<h3>80+</h3>
-<p>Candidates Placed</p>
-</div>
-<div class="metric">
-<h3>50+</h3>
-<p>Clients Supported</p>
-</div>
-</div>
-</div>
-
 <!-- ABOUT -->
-<div class="card">
+<div class="section" id="about">
 <h2>About Me</h2>
 <p>
-Results-driven Senior Technical Recruiter with expertise in US & Canadian staffing,
-VMS hiring, and full-cycle recruitment. Proven success delivering top-tier talent
-for Fortune 500 and high-growth companies.
+Senior Technical Recruiter with 8+ years of experience supporting Fortune 500 and high-growth companies.
+Expert in VMS hiring, ATS platforms, and full-cycle recruitment.
 </p>
 </div>
 
-<!-- SKILLS -->
-<div class="card">
-<h2>Core Expertise</h2>
+<!-- SERVICES -->
+<div class="section" id="services">
+<h2>How I Help</h2>
+<div class="grid">
+<div class="card">Full Cycle Recruitment</div>
+<div class="card">VMS Hiring (Fieldglass, VNDLY)</div>
+<div class="card">Contract / C2C / 1099 / T4 / Incorp / W2 / Full-Time Hiring</div>
+<div class="card">Niche Talent Sourcing</div>
+</div>
+</div>
+
+<!-- ROLES -->
+<div class="section" id="roles">
+<h2>Roles I Hire For</h2>
 <div class="tags">
-<span>Full Lifecycle Recruitment</span>
-<span>VMS Hiring</span>
-<span>JobDiva, Ceipal ATS</span>
-<span>Boolean Search</span>
-<span>W2 / C2C / Incorp / 1099 / T4</span>
+<span>Software Engineers</span>
+<span>Data Engineers</span>
+<span>Cloud Engineers</span>
+<span>QA / SDET</span>
+<span>DevOps Engineers</span>
+<span>Business Analysts</span>
 </div>
 </div>
 
 <!-- CLIENTS -->
-<div class="card">
+<div class="section" id="clients">
 <h2>Clients Supported</h2>
 <div class="tags">
 <span>Salesforce</span>
@@ -198,19 +210,46 @@ for Fortune 500 and high-growth companies.
 </div>
 </div>
 
+<!-- BOOLEAN -->
+<div class="section">
+<h2>Advanced Sourcing</h2>
+<div class="boolean">
+("Java Developer" OR "Backend Engineer") AND (Spring OR Microservices) AND (AWS OR Azure)
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Looking to Hire Top Talent?</h2>
+<p>Let’s connect and discuss your hiring needs.</p>
+<a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
+</div>
+
 <!-- CONTACT -->
-<div class="card">
+<div class="section" id="contact">
 <h2>Contact</h2>
 <p>Email: geetchandrasingha@gmail.com</p>
 <p>Phone: +1-812-356-2720</p>
-<p>
-<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank" style="color:white;">
-LinkedIn Profile
-</a>
-</p>
+<p><a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank" style="color:#38bdf8;">LinkedIn</a></p>
 </div>
 
 </div>
+
+<div class="footer">
+© 2026 Geet Chandra Singha
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
