@@ -67,7 +67,38 @@ body{margin:0;font-family:'Poppins',sans-serif;color:white;overflow-x:hidden;bac
 
 /* SOCIAL BAR */
 .social-bar{position:fixed;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;z-index:10}
-.social-bar a{display:flex;align-items:center;gap:10px;background:#2563eb;color:white;padding:12px;width:160px;margin:5px 0;text-decoration:none;border-radius:8px 0 0 8px;transform:translateX(110px);transition:0.3s}
+.social-bar a{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#2563eb;
+ color:white;
+ padding:6px;
+ width:34px;
+ height:34px;
+ margin:5px 0;
+ text-decoration:none;
+ border-radius:8px 0 0 8px;
+ transform:translateX(14px);
+ transition:0.3s ease;
+}
+.social-bar a i{
+ font-size:14px;
+}
+.social-bar a:hover{
+ transform:translateX(0) scale(1.05);
+ box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+.social-bar a i{
+ font-size:16px;
+}
+.social-bar a:hover{
+ transform:translateX(0) scale(1.05);
+ box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+.social-bar a:hover{
+ transform:translateX(0);
+}
 .social-bar a i{min-width:20px}
 .social-bar a:hover{transform:translateX(0)}
 
@@ -84,7 +115,7 @@ body{margin:0;font-family:'Poppins',sans-serif;color:white;overflow-x:hidden;bac
 <a href="Geet Chandra Singha.pdf" download class="btn"><i class="fas fa-download"></i> Download Resume</a>
 
 
-<div class="metrics">
+<div class="metrics section">
 <div class="metric"><h3 class="counter" data-target="9">0</h3><p>Years Experience</p></div>
 <div class="metric"><h3 class="counter" data-target="60">0</h3><p>Placements</p></div>
 <div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients Served</p></div>
@@ -128,28 +159,53 @@ Senior Technical Recruiter with 9+ years of experience delivering top talent acr
 </div>
 
 <div class="social-bar">
-<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
-<a href="tel:+18123562720"><i class="fas fa-phone"></i><span>Call</span></a>
-<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="tel:+18123562720"><i class="fas fa-phone"></i></a>
+<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank"><i class="fab fa-linkedin"></i></a>
 </div>
 
 <div class="footer">© 2026 Geet</div>
 
 <script>
-// COUNTER
- document.querySelectorAll('.counter').forEach(c=>{
- let target=+c.dataset.target,start=null,duration=5000;
- function animate(t){
- if(!start) start=t;
- let progress=(t-start)/duration;
- progress=Math.min(progress,1);
- let val=Math.floor((1-Math.pow(1-progress,3))*target);
- c.innerText=val;
- if(progress<1) requestAnimationFrame(animate);
- else c.innerText=target+"+";
- }
- requestAnimationFrame(animate);
+// COUNTER (REPEAT ON SCROLL)
+const counters=document.querySelectorAll('.counter');
+let counterPlayed=false;
+
+function runCounter(){
+ counters.forEach(c=>{
+  c.innerText='0';
+  let target=+c.dataset.target,start=null,duration=5000;
+
+  function animate(t){
+   if(!start) start=t;
+   let progress=(t-start)/duration;
+   progress=Math.min(progress,1);
+   let val=Math.floor((1-Math.pow(1-progress,3))*target);
+   c.innerText=val;
+   if(progress<1) requestAnimationFrame(animate);
+   else c.innerText=target+"+";
+  }
+  requestAnimationFrame(animate);
  });
+}
+
+window.addEventListener('scroll',()=>{
+ const metrics=document.querySelector('.metrics');
+ const top=metrics.getBoundingClientRect().top;
+ const bottom=metrics.getBoundingClientRect().bottom;
+
+ if(top<window.innerHeight-100 && bottom>100){
+  if(!counterPlayed){
+   runCounter();
+   counterPlayed=true;
+  }
+ } else {
+  counterPlayed=false;
+ }
+});
+
+// INITIAL TRIGGER
+window.dispatchEvent(new Event('scroll'));
 
 // TYPING
 const texts=[
@@ -177,35 +233,40 @@ function typeMain(){
 
 typeMain();
 
-// SCROLL REVEAL
+// CLIENT TAGS SELECT (MUST COME FIRST)
+const clientTags=document.querySelectorAll('.tags span');
+
+// SCROLL REVEAL (REPEAT ON SCROLL)
 const sections=document.querySelectorAll('.section');
 window.addEventListener('scroll',()=>{
  sections.forEach(sec=>{
   const top=sec.getBoundingClientRect().top;
-  if(top<window.innerHeight-100){
+  const bottom=sec.getBoundingClientRect().bottom;
+
+  if(top<window.innerHeight-100 && bottom>100){
    sec.classList.add('show');
+  } else {
+   sec.classList.remove('show');
+  }
+ });
+
+ // CLIENT TAG ANIMATION (REPEATABLE)
+ clientTags.forEach((tag,index)=>{
+  const top=tag.getBoundingClientRect().top;
+  const bottom=tag.getBoundingClientRect().bottom;
+
+  if(top<window.innerHeight-80 && bottom>50){
+   setTimeout(()=>{
+    tag.classList.add('show');
+   }, index*80);
+  } else {
+   tag.classList.remove('show');
   }
  });
 });
 
-// TRIGGER ON LOAD
+// INITIAL TRIGGER
 window.dispatchEvent(new Event('scroll'));
-
-// CLIENT TAG ANIMATION FIX
-const clientTags=document.querySelectorAll('.tags span');
-function revealClients(){
- clientTags.forEach((tag,index)=>{
-  const top=tag.getBoundingClientRect().top;
-  if(top<window.innerHeight-80){
-   setTimeout(()=>{
-    tag.classList.add('show');
-   }, index*80);
-  }
- });
-}
-
-window.addEventListener('scroll',revealClients);
-revealClients();
 </script>
 
 </body>
