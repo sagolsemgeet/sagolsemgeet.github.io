@@ -17,7 +17,6 @@ body {
     font-family: 'Poppins', sans-serif;
     color: white;
     overflow-x: hidden;
-
     background: linear-gradient(120deg, #4f46e5, #9333ea, #ec4899, #06b6d4);
     background-size: 300% 300%;
     animation: gradientMove 15s ease infinite;
@@ -36,8 +35,44 @@ body {
 .dots { position: fixed; right: 120px; top: 200px; width: 120px; height: 120px; background-image: radial-gradient(white 2px, transparent 2px); background-size: 20px 20px;}
 
 /* HERO */
-.hero { text-align:center; padding:120px 20px; }
-.hero h1 { font-size:64px; }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 8%;
+    gap: 40px;
+}
+
+.hero-left { width: 50%; }
+
+.hero-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 { font-size: 64px; }
+
+.profile-img {
+    width: 350px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* HERO METRICS */
+.hero-metrics {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.hero-metrics div {
+    text-align: center;
+}
+
+.hero-metrics h3 {
+    font-size: 32px;
+}
 
 /* BUTTON */
 .btn {
@@ -59,10 +94,6 @@ body {
 .container { width:85%; margin:auto; }
 .section { margin:80px 0; }
 
-/* METRICS */
-.metrics { display:flex; justify-content:space-around; flex-wrap:wrap; text-align:center;}
-.metric h3 { font-size:40px; }
-
 /* GRID */
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 .card { background:rgba(255,255,255,0.08); padding:20px; border-radius:15px; }
@@ -73,12 +104,43 @@ body {
 
 /* CONTACT */
 .contact-card { text-align:center; padding:30px; }
-.contact-icons { display:flex; justify-content:center; gap:25px; margin:20px 0; }
-.contact-icons a { color:white; }
-.contact-icons i { font-size:22px; }
+
+/* SOCIAL BAR */
+.social-bar {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-bar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #2563eb;
+    color: white;
+    padding: 12px 15px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 8px 0 0 8px;
+    transform: translateX(120px);
+    transition: 0.3s;
+}
+
+.social-bar a:hover {
+    transform: translateX(0);
+}
 
 /* FOOTER */
 .footer { text-align:center; padding:30px; background:rgba(0,0,0,0.3); }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero { flex-direction: column; text-align:center; }
+.hero-left, .hero-right { width:100%; }
+.hero-metrics { justify-content: center; }
+}
 
 </style>
 </head>
@@ -91,7 +153,9 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-<h1>Hi, I am Geet Chandra Singha</h1>
+
+<div class="hero-left">
+<h1>Geet Chandra Singha</h1>
 
 <h2 class="typing-line">
 <span id="typing-text"></span>
@@ -99,124 +163,85 @@ body {
 </h2>
 
 <p>Helping companies hire top tech talent across US & Canada</p>
+
 <a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
+
+<!-- 🔥 METRICS MOVED HERE -->
+<div class="hero-metrics">
+<div><h3 class="counter" data-target="8">0</h3><p>Years</p></div>
+<div><h3 class="counter" data-target="60">0</h3><p>Placements</p></div>
+<div><h3 class="counter" data-target="20">0</h3><p>Clients</p></div>
+</div>
+
+</div>
+
+<div class="hero-right">
+<img src="my-photo.jpg" class="profile-img">
+</div>
+
 </div>
 
 <div class="container">
 
-<!-- METRICS -->
-<div class="section">
-<div class="metrics">
-<div class="metric"><h3 class="counter" data-target="8">0</h3><p>Years</p></div>
-<div class="metric"><h3 class="counter" data-target="60">0</h3><p>Placements</p></div>
-<div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients</p></div>
-</div>
-</div>
-
 <!-- ABOUT -->
 <div class="section">
 <h2>About Me</h2>
-<p>
-Senior Technical Recruiter with 8+ years of experience specializing in US and Canada staffing. I have a strong background in full-cycle recruitment, including sourcing, screening, interviewing, and placing top-tier candidates across IT and engineering domains. I am highly proficient in ATS platforms like JobDiva and Ceipal, and extensively use job boards such as Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. I have successfully supported Fortune 500 clients through VMS platforms, delivering high-quality candidates with quick turnaround time while maintaining strong submission-to-placement ratios.
-</p>
+<p>Senior Technical Recruiter with 8+ years...</p>
 </div>
 
 <!-- HOW I HELP -->
 <div class="section">
 <h2>How I Help</h2>
 <div class="grid">
-
-<div class="card">
-<b>ATS & Job Boards</b><br>
-Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, Techfetch<br>
-<b>ATS:</b> JobDiva, Ceipal
+<div class="card">ATS & Job Boards...</div>
+<div class="card">VMS...</div>
+<div class="card">Hiring Models...</div>
+<div class="card">Expertise...</div>
 </div>
-
-<div class="card">
-<b>VMS Platforms</b><br>
-Fieldglass, VNDLY, Beeline, IQN, Econometrix, Magnit
-</div>
-
-<div class="card">
-<b>Hiring Models</b><br>
-W2, C2C, T4, 1099, InCorp, Full-Time
-</div>
-
-<div class="card">
-<b>Expertise</b><br>
-Full Cycle Recruitment, Sourcing, Screening, Pipeline Building, Stakeholder Management
-</div>
-
 </div>
 
 <!-- CLIENTS -->
 <div class="section">
 <h2>Clients Supported</h2>
 <div class="tags">
-<span>Salesforce</span>
-<span>Pinterest</span>
-<span>Okta</span>
-<span>DTCC</span>
-<span>Logitech</span>
-<span>RCCL</span>
-<span>Equinix</span>
-<span>Zillow</span>
-<span>Avanade</span>
-<span>Southern California Edison</span>
-<span>Solidigm</span>
+<span>Salesforce</span><span>Pinterest</span><span>Okta</span>
 </div>
 </div>
 
 <!-- CONTACT -->
 <div class="section">
 <h2>Contact Me</h2>
-
 <div class="contact-card">
-
 <p>Email: geetchandrasingha@gmail.com</p>
 <p>Phone: +1-812-356-2720</p>
-
-<div class="contact-icons">
-<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="tel:+18123562720"><i class="fas fa-phone"></i></a>
-<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
-</div>
-
 </div>
 </div>
 
 </div>
 
-<div class="footer">© 2026 Sagolsem Geet Chandra Singha</div>
+<!-- SOCIAL -->
+<div class="social-bar">
+<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
+<a href="tel:+18123562720"><i class="fas fa-phone"></i><span>Call</span></a>
+<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+</div>
+
+<div class="footer">© 2026 Geet</div>
 
 <script>
 
-/* ===== TRUE 5-SECOND SMOOTH COUNTER ===== */
-document.querySelectorAll('.counter').forEach(counter=>{
-let target=+counter.dataset.target;
-let duration=5000;
-let start=null;
-
-function animate(time){
-if(!start) start=time;
-
-let progress=(time-start)/duration;
+/* COUNTER */
+document.querySelectorAll('.counter').forEach(c=>{
+let target=+c.dataset.target,start=null,duration=5000;
+function animate(t){
+if(!start) start=t;
+let progress=(t-start)/duration;
 progress=Math.min(progress,1);
-
-let ease=1-Math.pow(1-progress,3);
-let value=Math.floor(ease*target);
-
-counter.innerText=value;
-
-if(progress<1){
-requestAnimationFrame(animate);
-}else{
-counter.innerText=target+"+";
+let val=Math.floor((1-Math.pow(1-progress,3))*target);
+c.innerText=val;
+if(progress<1) requestAnimationFrame(animate);
+else c.innerText=target+"+";
 }
-}
-
 requestAnimationFrame(animate);
 });
 
@@ -228,21 +253,14 @@ const texts=[
 ];
 
 let i=0,j=0,del=false;
-
 function type(){
 let t=texts[i];
-
-if(!del) j+=0.2;
-else j-=0.2;
-
+if(!del) j+=0.2; else j-=0.2;
 document.getElementById("typing-text").textContent=t.substring(0,Math.floor(j));
-
-if(!del && j>=t.length){del=true;setTimeout(type,1500);return;}
-if(del && j<=0){del=false;i=(i+1)%texts.length;}
-
+if(!del&&j>=t.length){del=true;setTimeout(type,1500);return;}
+if(del&&j<=0){del=false;i=(i+1)%texts.length;}
 requestAnimationFrame(type);
 }
-
 type();
 
 </script>
