@@ -3,118 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geet Chandra Singha | Senior Technical Recruiter</title>
+<title>Geet | Technical Recruiter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: #e2e8f0;
+body{margin:0;font-family:'Poppins',sans-serif;color:white;background:linear-gradient(120deg,#4f46e5,#9333ea,#ec4899,#06b6d4);background-size:300% 300%;animation:bg 15s ease infinite}
+@keyframes bg{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+
+.hero{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:120px 20px}
+.hero h1{font-size:50px}
+.typing{font-size:22px;margin-top:10px}
+.cursor{display:inline-block;width:2px;height:1em;background:white;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+
+.btn{margin-top:20px;padding:12px 25px;border-radius:25px;background:#2563eb;color:white;text-decoration:none}
+
+.section{padding:60px 10%;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:rgba(255,255,255,0.1);padding:20px;border-radius:15px}
+
+/* METRICS */
+.metrics{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-top:50px;
+ width:100%;
+ max-width:900px;
+ padding:0 20px;
 }
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+.metric{
+ flex:1;
+ text-align:center;
 }
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+.metric h3{font-size:48px;margin:0}
+.metric p{margin:8px 0 0;font-size:16px;opacity:0.9}
+
+.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.tags span{background:rgba(255,255,255,0.2);padding:8px 14px;border-radius:20px}
+
+/* SOCIAL BAR FIXED */
+.social-bar{
+ position:fixed;
+ right:0;
+ top:50%;
+ transform:translateY(-50%);
+ display:flex;
+ flex-direction:column;
+ z-index:1000;
 }
-h2 {
-    color: #38bdf8;
+.social-bar a{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ background:#2563eb;
+ color:white;
+ padding:12px 15px;
+ margin:5px 0;
+ text-decoration:none;
+ border-radius:8px 0 0 8px;
+ width:160px; /* fixed width so icon area is visible */
+ justify-content:flex-start;
+ transform:translateX(110px); /* only hide text, keep icon visible */
+ transition:0.3s ease;
 }
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 40px 0;
+.social-bar a i{
+ min-width:20px;
+ text-align:center;
+ font-size:18px;
 }
-.card {
-    background: #1e293b;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
+.social-bar a:hover{
+ transform:translateX(0);
 }
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-.btn:hover {
-    background: #0ea5e9;
-}
-a {
-    color: #38bdf8;
-    text-decoration: none;
-}
+.social-bar a:hover{transform:translateX(0)}
+
+.footer{text-align:center;padding:20px;background:rgba(0,0,0,0.3)}
+
+@media(max-width:768px){.hero h1{font-size:36px}}
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Geet Chandra Singha</h1>
-    <p>Senior Technical Recruiter | US & Canada Staffing Expert</p>
-    <a href="resume.pdf" download class="btn">Download Resume</a>
-</header>
+<div class="hero">
+<h1 id="main-text"></h1>
+<div class="typing"><span id="sub-text"></span><span class="cursor"></span></div>
+<p>Senior Technical Recruiter | US & Canada Staffing Specialist</p>
+<a href="#" class="btn">Download Resume</a>
 
-<div class="container">
+<!-- METRICS ABOVE ABOUT -->
+<div class="metrics">
+<div class="metric"><h3 class="counter" data-target="9">0</h3><p>Years Experience</p></div>
+<div class="metric"><h3 class="counter" data-target="60">0</h3><p>Placements</p></div>
+<div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients Served</p></div>
+</div>
 
-<div class="card">
+</div>
+
+<div class="section">
 <h2>About Me</h2>
 <p>
-Results-driven Senior Technical Recruiter with 8+ years of experience in US & Canadian staffing.
-Specialized in full-cycle recruitment, VMS hiring, and sourcing top-tier IT talent across W2, C2C, and T4 models.
+I am a Senior Technical Recruiter with over 9 years of experience specializing in US and Canada staffing across IT and engineering domains. I have a strong track record of delivering top-tier talent for Fortune 500 clients including Salesforce, Okta, Pinterest, DTCC, and Logitech. My expertise lies in full-cycle recruitment, from sourcing and screening to interview coordination, offer negotiation, and successful onboarding. I am highly proficient with ATS platforms like JobDiva and Ceipal, and I actively leverage job boards such as Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch to identify both active and passive candidates.
+
+I have extensive experience working with VMS platforms including Fieldglass, VNDLY, Beeline, IQN, and Magnit, enabling me to efficiently manage high-volume and priority requirements. I focus on building strong talent pipelines, maintaining excellent client and candidate relationships, and consistently delivering quality hires within tight timelines. My approach combines data-driven recruitment strategies with a deep understanding of market trends, ensuring successful placements and long-term client satisfaction.
 </p>
 </div>
 
-<div class="card">
-<h2>Core Expertise</h2>
-<ul>
-<li>Full Lifecycle Recruitment</li>
-<li>VMS: Fieldglass, VNDLY, Beeline, IQN</li>
-<li>ATS: JobDiva</li>
-<li>Sourcing: LinkedIn RPS, Dice, Monster</li>
-<li>Client Handling & Stakeholder Management</li>
-</ul>
+<div class="section">
+<h2>What I Do</h2>
+<div class="grid">
+<div class="card">Full Cycle Recruitment (End-to-End Hiring)</div>
+<div class="card">Contract, C2C, W2, 1099, T4, Full-Time Hiring</div>
+<div class="card">ATS: JobDiva, Ceipal</div>
+<div class="card">Job Boards: Dice, Monster, CareerBuilder, Indeed, LinkedIn</div>
+<div class="card">VMS: Fieldglass, VNDLY, Beeline, IQN, Magnit</div>
+<div class="card">Candidate Sourcing & Pipeline Building</div>
+<div class="card">Client & Stakeholder Management</div>
+<div class="card">Salary Negotiation & Offer Closure</div>
+</div>
 </div>
 
-<div class="card">
-<h2>Professional Experience</h2>
-<p><strong>Senior Technical Recruiter – eTeam</strong> (2021–Present)</p>
-<ul>
-<li>Worked with clients like Pinterest, Salesforce, Okta</li>
-<li>Handled high-volume IT & Engineering hiring</li>
-<li>Managed end-to-end recruitment lifecycle</li>
-</ul>
-
-<p><strong>Senior Technical Recruiter – SwaBz</strong> (2016–2020)</p>
-<ul>
-<li>Expert in Contract, C2H, Full-time hiring</li>
-<li>Strong experience in US & Canada recruitment</li>
-</ul>
+<div class="section">
+<h2>Clients</h2>
+<div class="tags">
+<span>Salesforce</span><span>Pinterest</span><span>Okta</span><span>DTCC</span><span>Logitech</span><span>RCCL</span><span>Equinix</span><span>Zillow</span><span>Avanade</span><span>Southern California Edison</span><span>Solidigm</span>
+</div>
 </div>
 
-<div class="card">
-<h2>Contact</h2>
-<p>Email: geetchandrasingha@gmail.com</p>
-<p>Phone: +1-812-356-2720</p>
-<p>
-LinkedIn: 
-<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">
-View Profile
-</a>
-</p>
+<!-- SOCIAL CONTACT BAR -->
+<div class="social-bar">
+<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
+<a href="tel:+18123562720"><i class="fas fa-phone"></i><span>Call</span></a>
+<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
 </div>
 
-</div>
+<div class="footer">© 2026 Geet</div>
+
+<script>
+// COUNTER ANIMATION (5 sec smooth)
+document.querySelectorAll('.counter').forEach(c=>{
+let target=+c.dataset.target,start=null,duration=5000;
+function animate(t){
+if(!start) start=t;
+let progress=(t-start)/duration;
+progress=Math.min(progress,1);
+let val=Math.floor((1-Math.pow(1-progress,3))*target);
+c.innerText=val;
+if(progress<1) requestAnimationFrame(animate);
+else c.innerText=target+"+";
+}
+requestAnimationFrame(animate);
+});
+
+// MAIN TYPING
+const mainText = "Hi, I am Geet Chandra";
+let i=0;
+function typeMain(){
+ if(i<mainText.length){
+  document.getElementById("main-text").innerHTML += mainText.charAt(i);
+  i++;
+  setTimeout(typeMain,80);
+ } else typeSub();
+}
+
+// SUB TYPING
+const roles=[
+"I Help Companies Hire Top Tech Talent",
+"Specialized in US & Canada Recruitment",
+"Expert in ATS, VMS & Tech Hiring"
+];
+let j=0,k=0,del=false;
+function typeSub(){
+ let txt=roles[j];
+ if(!del){k++;} else{k--;}
+ document.getElementById("sub-text").innerText=txt.substring(0,k);
+ if(!del && k===txt.length){del=true;setTimeout(typeSub,1500);return;}
+ if(del && k===0){del=false;j=(j+1)%roles.length;}
+ setTimeout(typeSub,60);
+}
+
+typeMain();
+</script>
 
 </body>
 </html>
