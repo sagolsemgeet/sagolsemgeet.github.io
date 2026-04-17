@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -27,6 +28,7 @@ body {
     100% {background-position: 0% 50%;}
 }
 
+/* HERO */
 .hero {
     text-align: center;
     padding: 120px 20px;
@@ -36,6 +38,11 @@ body {
     font-size: 64px;
 }
 
+.hero h3 {
+    opacity: 0.8;
+}
+
+/* BUTTON */
 .btn {
     margin-top: 20px;
     padding: 14px 28px;
@@ -43,9 +50,16 @@ body {
     border-radius: 30px;
     text-decoration: none;
     color: white;
+    display: inline-block;
+    transition: 0.3s;
 }
 
-/* typing */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(147,51,234,0.6);
+}
+
+/* TYPING */
 .typing-line {
     display: inline-flex;
     gap: 8px;
@@ -63,7 +77,7 @@ body {
     25%,75% {opacity:0;}
 }
 
-/* layout */
+/* SECTION */
 .container {
     width: 85%;
     margin: auto;
@@ -71,18 +85,66 @@ body {
 
 .section {
     margin: 80px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
 }
 
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* METRICS */
 .metrics {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .metric h3 {
     font-size: 40px;
 }
 
-/* contact */
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+/* CONTACT */
+.contact-card {
+    text-align: center;
+    padding: 30px;
+}
+
 .contact-icons {
     display: flex;
     justify-content: center;
@@ -90,24 +152,50 @@ body {
     margin: 20px 0;
 }
 
+.contact-icons i {
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.contact-icons i:hover {
+    transform: scale(1.2);
+    color: #38bdf8;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
     padding: 30px;
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
+
 <h1>Geet Chandra Singha</h1>
+<h3>Senior Technical Recruiter</h3>
 
 <h2 class="typing-line">
 <span id="typing-text"></span>
 <span class="cursor"></span>
 </h2>
 
-<a href="#" class="btn">Download Resume</a>
+<p>Helping companies hire top tech talent across US & Canada</p>
+
+<a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
+
 </div>
 
 <div class="container">
@@ -121,9 +209,53 @@ body {
 </div>
 </div>
 
+<!-- ABOUT -->
+<div class="section">
+<h2>About Me</h2>
+<p>
+Senior Technical Recruiter with 8+ years of experience specializing in US and Canada staffing, delivering top-tier IT and engineering talent.
+</p>
+</div>
+
+<!-- HOW I HELP -->
+<div class="section">
+<h2>How I Help</h2>
+
+<div class="grid">
+<div class="card"><b>ATS & Job Boards</b><br>Dice, Monster, CareerBuilder, Indeed, LinkedIn, Techfetch</div>
+<div class="card"><b>VMS</b><br>Fieldglass, VNDLY, Beeline, IQN, Econometrix, Magnit</div>
+<div class="card"><b>Hiring Models</b><br>W2, C2C, T4, 1099, InCorp</div>
+<div class="card"><b>Expertise</b><br>Full Cycle Recruitment</div>
+</div>
+
+</div>
+
+<!-- CLIENTS -->
+<div class="section">
+<h2>Clients Supported</h2>
+<div class="tags">
+<span>Salesforce</span><span>Pinterest</span><span>Okta</span>
+<span>DTCC</span><span>Logitech</span><span>RCCL</span>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="section">
+<div class="cta">
+<h2>Looking to Hire Top Tech Talent?</h2>
+<p>I help companies find the right candidates quickly and efficiently.</p>
+<a href="mailto:geetchandrasingha@gmail.com" class="btn">Let’s Connect</a>
+</div>
+</div>
+
 <!-- CONTACT -->
 <div class="section">
 <h2>Contact Me</h2>
+
+<div class="contact-card">
+
+<p>Email: geetchandrasingha@gmail.com</p>
+<p>Phone: +1-812-356-2720</p>
 
 <div class="contact-icons">
 <a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -133,7 +265,7 @@ body {
 </a>
 </div>
 
-<a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
+</div>
 
 </div>
 
@@ -143,41 +275,32 @@ body {
 
 <script>
 
-/* ===== FLUID 5-SECOND COUNTER ===== */
-document.querySelectorAll('.counter').forEach(counter => {
-
-let target = +counter.dataset.target;
-let duration = 5000;
-let start = null;
-
-function animate(time) {
-
-if (!start) start = time;
-
-let progress = (time - start) / duration;
-progress = Math.min(progress, 1);
-
-/* smooth easing */
-let ease = 1 - Math.pow(1 - progress, 3);
-
-let value = Math.floor(ease * target);
-
-counter.innerText = value;
-
-if (progress < 1) {
-    requestAnimationFrame(animate);
-} else {
-    counter.innerText = target + "+";
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+sections.forEach(sec => {
+if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+sec.classList.add('show');
 }
-
-}
-
-requestAnimationFrame(animate);
-
+});
 });
 
+/* COUNTER */
+document.querySelectorAll('.counter').forEach(counter=>{
+let target=+counter.dataset.target, start=null, duration=5000;
+function animate(t){
+if(!start) start=t;
+let progress=(t-start)/duration;
+progress=Math.min(progress,1);
+let value=Math.floor((1-Math.pow(1-progress,3))*target);
+counter.innerText=value;
+if(progress<1) requestAnimationFrame(animate);
+else counter.innerText=target+"+";
+}
+requestAnimationFrame(animate);
+});
 
-/* ===== TYPING (UNCHANGED) ===== */
+/* TYPING */
 const texts=[
 "I Help Companies Hire Top Tech Talent",
 "I Deliver High-Quality Candidates, Fast",
@@ -185,21 +308,14 @@ const texts=[
 ];
 
 let i=0,j=0,del=false;
-
 function type(){
 let t=texts[i];
-
-if(!del) j+=0.2;
-else j-=0.2;
-
+if(!del) j+=0.2; else j-=0.2;
 document.getElementById("typing-text").textContent=t.substring(0,Math.floor(j));
-
 if(!del && j>=t.length){del=true;setTimeout(type,1500);return;}
 if(del && j<=0){del=false;i=(i+1)%texts.length;}
-
 requestAnimationFrame(type);
 }
-
 type();
 
 </script>
