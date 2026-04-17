@@ -11,147 +11,71 @@
 
 <style>
 
-/* ================= BACKGROUND ================= */
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
     overflow-x: hidden;
 
+    /* 🔥 UPDATED BACKGROUND ONLY */
     background: linear-gradient(120deg, #4f46e5, #9333ea, #ec4899, #06b6d4);
     background-size: 300% 300%;
     animation: gradientMove 12s ease infinite;
 }
 
+/* NEW animation */
 @keyframes gradientMove {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
 
-/* ================= SHAPES ================= */
-
-.shape {
-    position: fixed;
-    z-index: 0;
-    opacity: 0.25;
-}
-
-/* glowing blob */
-.circle {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #38bdf8, transparent);
-    top: 10%;
-    left: 10%;
-    border-radius: 50%;
-    filter: blur(60px);
-}
-
-/* rotating ring */
-.ring {
-    width: 250px;
-    height: 250px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    bottom: 15%;
-    right: 10%;
-    animation: rotateRing 12s linear infinite;
-    box-shadow: 0 0 40px rgba(147,51,234,0.6);
-}
-
-@keyframes rotateRing {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-/* floating dots */
-.dots {
-    width: 140px;
-    height: 140px;
-    top: 30%;
-    right: 15%;
-    background-image: radial-gradient(white 2px, transparent 2px);
-    background-size: 20px 20px;
-    animation: floatDots 6s ease-in-out infinite;
-}
-
-@keyframes floatDots {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-15px);}
-}
-
-/* ================= LAYOUT ================= */
-
-.navbar, .hero, .container {
-    position: relative;
-    z-index: 2;
-}
-
+/* NAV */
 .navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,0.9);
     padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero {
     text-align: center;
     padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 64px;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255,255,255,0.4);
+    font-size: 60px;
+    color: #38bdf8;
 }
 
 .hero h3 {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
-/* glow behind hero */
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(147,51,234,0.5), transparent);
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: blur(100px);
-    z-index: -1;
-}
-
-/* ================= BUTTON ================= */
-
+/* BUTTON */
 .btn {
-    margin-top: 25px;
-    padding: 14px 30px;
+    margin-top: 20px;
+    padding: 14px 28px;
     background: linear-gradient(45deg,#38bdf8,#9333ea);
     border-radius: 30px;
-    color: white;
     text-decoration: none;
+    color: white;
 }
 
-/* ================= TYPING ================= */
-
+/* CLEAN TYPING FIX */
 .typing-line {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-}
-
-.typing-mask {
-    overflow: hidden;
-    white-space: nowrap;
+    gap: 6px;
 }
 
 .cursor {
     width: 2px;
     height: 1.2em;
-    background: #fff;
+    background: #38bdf8;
     animation: blink 1s infinite;
 }
 
@@ -160,45 +84,59 @@ body {
     25%,75% {opacity:0;}
 }
 
-/* ================= SECTION ================= */
-
+/* SECTION */
 .container {
     width: 85%;
     margin: auto;
 }
 
 .section {
-    margin: 80px 0;
+    margin: 70px 0;
 }
 
-/* ================= GLASS CARDS ================= */
-
-.card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    padding: 25px;
-    border-radius: 15px;
-}
-
-/* ================= METRICS ================= */
-
+/* METRICS */
 .metrics {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .metric h3 {
     font-size: 42px;
-    color: #fff;
+    color: #38bdf8;
 }
 
-/* ================= CONTACT ================= */
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
 
-.contact-card {
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    padding: 30px;
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+/* CONTACT */
+.contact-card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
     border-radius: 15px;
     text-align: center;
 }
@@ -212,14 +150,19 @@ body {
 
 .contact-icons i {
     font-size: 22px;
+    transition: 0.3s;
 }
 
-/* ================= FOOTER ================= */
+.contact-icons i:hover {
+    color: #9333ea;
+    transform: scale(1.2);
+}
 
+/* FOOTER */
 .footer {
     text-align: center;
     padding: 30px;
-    background: rgba(0,0,0,0.3);
+    background: #020617;
 }
 
 </style>
@@ -227,106 +170,143 @@ body {
 
 <body>
 
-<!-- SHAPES -->
-<div class="shape circle"></div>
-<div class="shape ring"></div>
-<div class="shape dots"></div>
+<div class="navbar">
+<div><strong>Geet</strong></div>
+</div>
 
 <!-- HERO -->
 <div class="hero">
-
 <h1>Geet Chandra Singha</h1>
 <h3>Senior Technical Recruiter</h3>
 
 <h2 class="typing-line">
-<span class="typing-mask"><span id="typing-text"></span></span>
+<span id="typing-text"></span>
 <span class="cursor"></span>
 </h2>
 
-<p>Helping companies hire top tech talent across US & Canada</p>
+<p>Specialized in US & Canada recruitment delivering high-quality candidates across IT & Engineering.</p>
 
-<a href="#" class="btn">Download Resume</a>
-
+<a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
 </div>
 
 <div class="container">
 
 <!-- METRICS -->
 <div class="section">
+<h2 style="text-align:center;">Proven Results</h2>
+
 <div class="metrics">
-<div class="metric"><h3 class="counter" data-target="8">0</h3><p>Years</p></div>
-<div class="metric"><h3 class="counter" data-target="60">0</h3><p>Placements</p></div>
-<div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients</p></div>
+<div class="metric"><h3 class="counter" data-target="8">0</h3><p>Years Experience</p></div>
+<div class="metric"><h3 class="counter" data-target="60">0</h3><p>Successful Placements</p></div>
+<div class="metric"><h3 class="counter" data-target="20">0</h3><p>Clients Served</p></div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2>About Me</h2>
+<p>
+Results-driven Senior Technical Recruiter with 8+ years of experience in US and Canadian staffing...
+</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+<h2>How I Help</h2>
+<div class="grid">
+<div class="card"><b>ATS & Job Boards</b><br>Dice, Monster, CareerBuilder...</div>
+<div class="card"><b>VMS Platforms</b><br>Fieldglass, VNDLY...</div>
+<div class="card"><b>Hiring Models</b><br>W2, C2C...</div>
+<div class="card"><b>Expertise</b><br>Full Cycle Recruitment</div>
+</div>
+</div>
+
+<!-- CLIENTS -->
+<div class="section">
+<h2>Clients Supported</h2>
+<div class="tags">
+<span>Salesforce</span><span>Pinterest</span><span>Okta</span>
 </div>
 </div>
 
 <!-- CONTACT -->
 <div class="section">
-<div class="contact-card">
+<h2>Contact Me</h2>
 
-<p>Email: geetchandrasingha@gmail.com</p>
+<div class="contact-card">
+<p><strong>Email:</strong> geetchandrasingha@gmail.com</p>
+<p><strong>Phone:</strong> +1-812-356-2720</p>
 
 <div class="contact-icons">
-<i class="fas fa-envelope"></i>
-<i class="fas fa-phone"></i>
+<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="tel:+18123562720"><i class="fas fa-phone"></i></a>
+<a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">
 <i class="fab fa-linkedin"></i>
+</a>
 </div>
 
-<a href="#" class="btn">Contact Me</a>
-
+<a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
 </div>
 </div>
 
 </div>
 
 <div class="footer">
-© 2026 Geet
+© 2026 Geet Chandra Singha
 </div>
 
 <script>
 
-/* COUNTER */
-document.querySelectorAll('.counter').forEach(c=>{
-let target=+c.dataset.target, count=0;
+// COUNTER (5 sec)
+document.querySelectorAll('.counter').forEach(counter=>{
+let target=+counter.dataset.target;
+let count=0;
 let step=target/(5000/50);
+
 function update(){
 count+=step;
 if(count<target){
-c.innerText=Math.ceil(count);
+counter.innerText=Math.ceil(count);
 setTimeout(update,50);
-}else c.innerText=target+"+";
+}else{
+counter.innerText=target+"+";
+}
 }
 update();
 });
 
-/* SMOOTH REVEAL TEXT */
+// TYPING (unchanged)
 const texts=[
 "I Help Companies Hire Top Tech Talent",
 "I Deliver High-Quality Candidates, Fast",
 "I Specialize in US & Canada Recruitment"
 ];
 
-let i=0;
+let i=0,j=0,deleting=false;
 
-function animate(){
-let textEl=document.getElementById("typing-text");
-let mask=document.querySelector(".typing-mask");
+function type(){
+let current=texts[i];
 
-textEl.textContent=texts[i];
-mask.style.width="0px";
+if(!deleting){ j+=0.5; }
+else { j-=0.6; }
 
-let w=textEl.scrollWidth;
+document.getElementById("typing-text").textContent=current.substring(0,Math.floor(j));
 
-mask.animate([{width:"0px"},{width:w+"px"}],
-{duration:3000,easing:"ease-out",fill:"forwards"});
-
-setTimeout(()=>{
-i=(i+1)%texts.length;
-animate();
-},4200);
+if(!deleting && j>=current.length){
+deleting=true;
+setTimeout(type,1200);
+return;
 }
 
-animate();
+if(deleting && j<=0){
+deleting=false;
+i=(i+1)%texts.length;
+}
+
+requestAnimationFrame(type);
+}
+
+type();
 
 </script>
 
