@@ -9,18 +9,50 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{margin:0;font-family:'Poppins',sans-serif;color:white;background:linear-gradient(120deg,#4f46e5,#9333ea,#ec4899,#06b6d4);background-size:300% 300%;animation:bg 15s ease infinite}
+body{margin:0;font-family:'Poppins',sans-serif;color:white;overflow-x:hidden;background:#062b33;position:relative;z-index:1;}
+canvas#bg{
+ position:fixed;
+ top:0;left:0;
+ width:100%;height:100%;
+ z-index:0;
+}
 @keyframes bg{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
 
-.hero{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:120px 20px}
+.hero{
+ position:relative;
+ z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:120px 20px}
 .hero h1{font-size:50px}
 .typing{font-size:22px;margin-top:10px}
 .cursor{display:inline-block;width:2px;height:1em;background:white;animation:blink 1s infinite}
 @keyframes blink{50%{opacity:0}}
 
-.btn{margin-top:20px;padding:12px 25px;border-radius:25px;background:#2563eb;color:white;text-decoration:none}
+.btn{
+ margin-top:20px;
+ padding:12px 25px;
+ border-radius:25px;
+ background:#2563eb;
+ color:white;
+ text-decoration:none;
+ position:relative;
+ overflow:hidden;
+ transition:0.3s;
+}
+.btn::before{
+ content:"";
+ position:absolute;
+ width:0;
+ height:100%;
+ left:0;top:0;
+ background:linear-gradient(90deg,#06b6d4,#9333ea);
+ transition:0.4s;
+ z-index:-1;
+}
+.btn:hover::before{width:100%;}
+.btn:hover{transform:scale(1.05);}
 
-.section{padding:60px 10%;text-align:center}
+.section{
+ position:relative;
+ z-index:2;padding:60px 10%;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .card{background:rgba(255,255,255,0.1);padding:20px;border-radius:15px}
 
@@ -46,6 +78,8 @@ body{margin:0;font-family:'Poppins',sans-serif;color:white;background:linear-gra
 
 /* SOCIAL BAR FIXED */
 .social-bar{
+ position:fixed;
+ z-index:3;
  position:fixed;
  right:0;
  top:50%;
@@ -85,6 +119,7 @@ body{margin:0;font-family:'Poppins',sans-serif;color:white;background:linear-gra
 </style>
 </head>
 <body>
+<canvas id="bg"></canvas>
 
 <div class="hero">
 <h1 id="main-text"></h1>
@@ -138,7 +173,7 @@ I have extensive experience working with VMS platforms including Fieldglass, VND
 <a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
 </div>
 
-<div class="footer">© 2026 Sagolsem Geet Chandra</div>
+<div class="footer">© 2026 Geet</div>
 
 <script>
 // COUNTER ANIMATION (5 sec smooth)
@@ -184,6 +219,46 @@ function typeSub(){
 }
 
 typeMain();
+
+// PARTICLE BACKGROUND
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for(let i=0;i<120;i++){
+ particles.push({
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  r:Math.random()*2,
+  dx:(Math.random()-0.5)*0.5,
+  dy:(Math.random()-0.5)*0.5
+ });
+}
+
+function animateParticles(){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ particles.forEach(p=>{
+  ctx.beginPath();
+  ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+  ctx.fillStyle='#00e5ff';
+  ctx.fill();
+
+  p.x+=p.dx;
+  p.y+=p.dy;
+
+  if(p.x<0||p.x>canvas.width) p.dx*=-1;
+  if(p.y<0||p.y>canvas.height) p.dy*=-1;
+ });
+ requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+window.addEventListener('resize',()=>{
+ canvas.width=window.innerWidth;
+ canvas.height=window.innerHeight;
+});
 </script>
 
 </body>
