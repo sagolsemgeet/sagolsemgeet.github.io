@@ -11,6 +11,7 @@
 
 <style>
 
+/* ===== BODY BACKGROUND ===== */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -28,164 +29,98 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 120px 20px;
-}
+/* ===== SHAPES ===== */
+.circle { position: fixed; width: 250px; height: 250px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); top: 80px; left: 80px; animation: rotate 15s linear infinite;}
+@keyframes rotate {from {transform: rotate(0deg);} to {transform: rotate(360deg);}}
+.ring { position: fixed; width: 300px; height: 300px; border-radius: 50%; right: 100px; bottom: 120px; border: 3px solid rgba(255,255,255,0.15); box-shadow: 0 0 50px rgba(147,51,234,0.6);}
+.dots { position: fixed; right: 120px; top: 200px; width: 120px; height: 120px; background-image: radial-gradient(white 2px, transparent 2px); background-size: 20px 20px;}
 
-.hero h1 {
-    font-size: 60px;
-}
+/* ===== HERO ===== */
+.hero { text-align: center; padding: 120px 20px; }
+.hero h1 { font-size: 64px; }
+.hero h3 { opacity: 0.9; }
 
-.hero h3 {
-    opacity: 0.85;
-}
-
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn {
-    margin-top: 20px;
-    padding: 14px 28px;
+    margin-top: 25px;
+    padding: 14px 30px;
     background: linear-gradient(45deg,#38bdf8,#9333ea);
     border-radius: 30px;
-    text-decoration: none;
     color: white;
-    display: inline-block;
-    transition: 0.3s;
+    text-decoration: none;
+    display:inline-block;
+    transition:0.3s;
 }
+.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(147,51,234,0.6); }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(147,51,234,0.6);
-}
+/* ===== TYPING ===== */
+.typing-line { display: inline-flex; gap: 8px; }
+.cursor { width: 2px; height: 1.2em; background: white; animation: blink 1s infinite;}
+@keyframes blink {0%,50%,100% {opacity:1;} 25%,75% {opacity:0;}}
 
-/* TYPING */
-.typing-line {
-    display: inline-flex;
-    gap: 8px;
-}
+/* ===== LAYOUT ===== */
+.container { width: 85%; margin: auto; }
 
-.cursor {
-    width: 2px;
-    height: 1.2em;
-    background: white;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%,50%,100% {opacity:1;}
-    25%,75% {opacity:0;}
-}
-
-/* SECTION */
-.container {
-    width: 85%;
-    margin: auto;
-}
-
+/* ===== SCROLL ANIMATION ===== */
 .section {
     margin: 80px 0;
     opacity: 0;
     transform: translateY(40px);
     transition: 0.8s ease;
 }
-
 .section.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* METRICS */
-.metrics {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.metric h3 {
-    font-size: 40px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
+/* ===== CARDS ===== */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
 .card {
     background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 15px;
-    transition: 0.3s;
+    transition:0.3s;
 }
+.card:hover { transform: translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.3); }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
+/* ===== METRICS ===== */
+.metrics { display: flex; justify-content: space-around; flex-wrap: wrap; }
+.metric h3 { font-size: 40px; }
 
-/* TAGS */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+/* ===== TAGS ===== */
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tags span { background: rgba(255,255,255,0.15); padding: 8px 14px; border-radius: 20px; }
 
-.tags span {
-    background: rgba(255,255,255,0.15);
-    padding: 8px 14px;
-    border-radius: 20px;
-}
-
-/* CTA */
+/* ===== CTA ===== */
 .cta {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 15px;
+    text-align:center;
+    padding:60px 20px;
+    background:rgba(0,0,0,0.3);
+    border-radius:15px;
 }
 
-/* CONTACT */
-.contact-card {
-    text-align: center;
-    padding: 30px;
-}
+/* ===== CONTACT ===== */
+.contact-card { text-align: center; padding: 30px; }
+.contact-icons { display:flex; justify-content:center; gap:25px; margin:20px 0;}
+.contact-icons i { font-size:22px; transition:0.3s;}
+.contact-icons i:hover { transform:scale(1.2); color:#38bdf8; }
 
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 20px 0;
-}
-
-.contact-icons i {
-    font-size: 22px;
-    transition: 0.3s;
-}
-
-.contact-icons i:hover {
-    transform: scale(1.2);
-    color: #38bdf8;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 30px;
-}
+/* ===== FOOTER ===== */
+.footer { text-align:center; padding:30px; background:rgba(0,0,0,0.3); }
 
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<div class="circle"></div>
+<div class="ring"></div>
+<div class="dots"></div>
 
+<div class="hero">
 <h1>Geet Chandra Singha</h1>
-<h3>Senior Technical Recruiter | US & Canada Staffing | IT & Engineering Hiring</h3>
+<h3>Senior Technical Recruiter | US & Canada Staffing | IT Hiring</h3>
 
 <h2 class="typing-line">
 <span id="typing-text"></span>
@@ -193,9 +128,7 @@ body {
 </h2>
 
 <p>Helping companies hire top tech talent across US & Canada</p>
-
 <a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
-
 </div>
 
 <div class="container">
@@ -212,22 +145,18 @@ body {
 <!-- ABOUT -->
 <div class="section">
 <h2>About Me</h2>
-<p>
-Senior Technical Recruiter with 8+ years of experience in US and Canada staffing. Skilled in full-cycle recruitment, sourcing, screening, and placing top talent across IT and engineering domains. Strong expertise in ATS tools like JobDiva and Ceipal and job boards including Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. Proven track record supporting Fortune 500 clients and delivering high-quality hires with fast turnaround.
-</p>
+<p>Senior Technical Recruiter with 8+ years...</p>
 </div>
 
 <!-- HOW I HELP -->
 <div class="section">
 <h2>How I Help</h2>
-
 <div class="grid">
-<div class="card"><b>ATS & Job Boards</b><br>Dice, Monster, CareerBuilder, Indeed, LinkedIn, Techfetch<br>ATS: JobDiva, Ceipal</div>
-<div class="card"><b>VMS</b><br>Fieldglass, VNDLY, Beeline, IQN, Econometrix, Magnit</div>
-<div class="card"><b>Hiring Models</b><br>W2, C2C, T4, 1099, InCorp, Full-Time</div>
-<div class="card"><b>Expertise</b><br>Full Cycle Recruitment, Sourcing, Pipeline Building</div>
+<div class="card"><b>ATS & Job Boards</b><br>Dice, Monster...</div>
+<div class="card"><b>VMS</b><br>Fieldglass...</div>
+<div class="card"><b>Hiring Models</b><br>W2, C2C...</div>
+<div class="card"><b>Expertise</b><br>Full Cycle Recruitment</div>
 </div>
-
 </div>
 
 <!-- CLIENTS -->
@@ -235,13 +164,10 @@ Senior Technical Recruiter with 8+ years of experience in US and Canada staffing
 <h2>Clients Supported</h2>
 <div class="tags">
 <span>Salesforce</span><span>Pinterest</span><span>Okta</span>
-<span>DTCC</span><span>Logitech</span><span>RCCL</span>
-<span>Equinix</span><span>Zillow</span><span>Avanade</span>
-<span>Southern California Edison</span><span>Solidigm</span>
 </div>
 </div>
 
-<!-- CTA -->
+<!-- NEW CTA -->
 <div class="section">
 <div class="cta">
 <h2>Looking to Hire Top Tech Talent?</h2>
@@ -253,9 +179,7 @@ Senior Technical Recruiter with 8+ years of experience in US and Canada staffing
 <!-- CONTACT -->
 <div class="section">
 <h2>Contact Me</h2>
-
 <div class="contact-card">
-
 <p>Email: geetchandrasingha@gmail.com</p>
 <p>Phone: +1-812-356-2720</p>
 
@@ -268,9 +192,7 @@ Senior Technical Recruiter with 8+ years of experience in US and Canada staffing
 </div>
 
 <a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
-
 </div>
-
 </div>
 
 </div>
@@ -279,45 +201,40 @@ Senior Technical Recruiter with 8+ years of experience in US and Canada staffing
 
 <script>
 
-/* SCROLL ANIMATION */
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-sections.forEach(sec => {
-if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+/* SCROLL */
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
 sec.classList.add('show');
 }
 });
 });
 
-/* COUNTER (5s fluid) */
-document.querySelectorAll('.counter').forEach(counter=>{
-let target=+counter.dataset.target, start=null, duration=5000;
+/* COUNTER (5s smooth) */
+document.querySelectorAll('.counter').forEach(c=>{
+let target=+c.dataset.target,start=null,duration=5000;
 function animate(t){
 if(!start) start=t;
 let progress=(t-start)/duration;
 progress=Math.min(progress,1);
-let value=Math.floor((1-Math.pow(1-progress,3))*target);
-counter.innerText=value;
+let val=Math.floor((1-Math.pow(1-progress,3))*target);
+c.innerText=val;
 if(progress<1) requestAnimationFrame(animate);
-else counter.innerText=target+"+";
+else c.innerText=target+"+";
 }
 requestAnimationFrame(animate);
 });
 
 /* TYPING */
-const texts=[
-"I Help Companies Hire Top Tech Talent",
-"I Deliver High-Quality Candidates, Fast",
-"I Specialize in US & Canada Recruitment"
-];
-
+const texts=["I Help Companies Hire Top Tech Talent","I Deliver High-Quality Candidates, Fast","I Specialize in US & Canada Recruitment"];
 let i=0,j=0,del=false;
 function type(){
 let t=texts[i];
 if(!del) j+=0.2; else j-=0.2;
 document.getElementById("typing-text").textContent=t.substring(0,Math.floor(j));
-if(!del && j>=t.length){del=true;setTimeout(type,1500);return;}
-if(del && j<=0){del=false;i=(i+1)%texts.length;}
+if(!del&&j>=t.length){del=true;setTimeout(type,1500);return;}
+if(del&&j<=0){del=false;i=(i+1)%texts.length;}
 requestAnimationFrame(type);
 }
 type();
