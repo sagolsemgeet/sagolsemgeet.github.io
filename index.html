@@ -10,8 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* ===== BODY BACKGROUND (FLUID STYLE) ===== */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -29,45 +27,6 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-/* ===== DECORATIVE SHAPES ===== */
-.circle {
-    position: fixed;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.2);
-    top: 80px;
-    left: 80px;
-    animation: rotate 15s linear infinite;
-}
-
-@keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-.ring {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    right: 100px;
-    bottom: 120px;
-    border: 3px solid rgba(255,255,255,0.15);
-    box-shadow: 0 0 50px rgba(147,51,234,0.6);
-}
-
-.dots {
-    position: fixed;
-    right: 120px;
-    top: 200px;
-    width: 120px;
-    height: 120px;
-    background-image: radial-gradient(white 2px, transparent 2px);
-    background-size: 20px 20px;
-}
-
-/* ===== HERO ===== */
 .hero {
     text-align: center;
     padding: 120px 20px;
@@ -77,24 +36,18 @@ body {
     font-size: 64px;
 }
 
-.hero h3 {
-    opacity: 0.8;
-}
-
-/* ===== BUTTON ===== */
 .btn {
-    margin-top: 25px;
-    padding: 14px 30px;
+    margin-top: 20px;
+    padding: 14px 28px;
     background: linear-gradient(45deg,#38bdf8,#9333ea);
     border-radius: 30px;
-    color: white;
     text-decoration: none;
+    color: white;
 }
 
-/* ===== TYPING ===== */
+/* typing */
 .typing-line {
     display: inline-flex;
-    align-items: center;
     gap: 8px;
 }
 
@@ -110,7 +63,7 @@ body {
     25%,75% {opacity:0;}
 }
 
-/* ===== LAYOUT ===== */
+/* layout */
 .container {
     width: 85%;
     margin: auto;
@@ -120,50 +73,16 @@ body {
     margin: 80px 0;
 }
 
-/* ===== CARDS ===== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
-.card {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    padding: 20px;
-    border-radius: 15px;
-}
-
-/* ===== METRICS ===== */
 .metrics {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 .metric h3 {
     font-size: 40px;
 }
 
-/* ===== TAGS ===== */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tags span {
-    background: rgba(255,255,255,0.15);
-    padding: 8px 14px;
-    border-radius: 20px;
-}
-
-/* ===== CONTACT FIX ===== */
-.contact-card {
-    text-align: center;
-    padding: 30px;
-}
-
+/* contact */
 .contact-icons {
     display: flex;
     justify-content: center;
@@ -171,42 +90,24 @@ body {
     margin: 20px 0;
 }
 
-.contact-btn {
-    margin-top: 10px;
-}
-
-/* ===== FOOTER ===== */
 .footer {
     text-align: center;
     padding: 30px;
-    background: rgba(0,0,0,0.3);
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- SHAPES -->
-<div class="circle"></div>
-<div class="ring"></div>
-<div class="dots"></div>
-
-<!-- HERO -->
 <div class="hero">
-
 <h1>Geet Chandra Singha</h1>
-<h3>Senior Technical Recruiter</h3>
 
 <h2 class="typing-line">
 <span id="typing-text"></span>
 <span class="cursor"></span>
 </h2>
 
-<p>Helping companies hire top tech talent across US & Canada</p>
-
-<a href="Geet Chandra Singha.pdf" class="btn">Download Resume</a>
-
+<a href="#" class="btn">Download Resume</a>
 </div>
 
 <div class="container">
@@ -220,90 +121,63 @@ body {
 </div>
 </div>
 
-<!-- ABOUT -->
-<div class="section">
-<h2>About Me</h2>
-<p>
-Senior Technical Recruiter with 8+ years of experience in US and Canada staffing. Expert in full-cycle recruitment, sourcing, screening, and placing high-quality candidates across IT and engineering roles. Skilled in ATS tools like JobDiva and Ceipal, and job boards including Dice, Monster, CareerBuilder, Indeed, LinkedIn Recruiter, and Techfetch. Proven track record of working with Fortune 500 clients, managing VMS hiring, and delivering fast, high-quality results.
-</p>
-</div>
-
-<!-- HOW I HELP -->
-<div class="section">
-<h2>How I Help</h2>
-
-<div class="grid">
-<div class="card"><b>ATS & Job Boards</b><br>Dice, Monster, CareerBuilder, Indeed, LinkedIn, Techfetch<br>ATS: JobDiva, Ceipal</div>
-<div class="card"><b>VMS</b><br>Fieldglass, VNDLY, Beeline, IQN, Econometrix, Magnit</div>
-<div class="card"><b>Hiring Models</b><br>W2, C2C, T4, 1099, InCorp, Full-Time</div>
-<div class="card"><b>Expertise</b><br>Full Cycle Recruitment, Sourcing, Pipeline Building</div>
-</div>
-
-</div>
-
-<!-- CLIENTS -->
-<div class="section">
-<h2>Clients Supported</h2>
-
-<div class="tags">
-<span>Salesforce</span><span>Pinterest</span><span>Okta</span>
-<span>DTCC</span><span>Logitech</span><span>RCCL</span>
-<span>Equinix</span><span>Zillow</span><span>Avanade</span>
-<span>Southern California Edison</span><span>Solidigm</span>
-</div>
-
-</div>
-
 <!-- CONTACT -->
 <div class="section">
 <h2>Contact Me</h2>
 
-<div class="contact-card">
-
-<p>Email: geetchandrasingha@gmail.com</p>
-<p>Phone: +1-812-356-2720</p>
-
 <div class="contact-icons">
-
-<a href="mailto:geetchandrasingha@gmail.com">
-<i class="fas fa-envelope"></i>
-</a>
-
-<a href="tel:+18123562720">
-<i class="fas fa-phone"></i>
-</a>
-
+<a href="mailto:geetchandrasingha@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="tel:+18123562720"><i class="fas fa-phone"></i></a>
 <a href="https://www.linkedin.com/in/geetchandrasingha/" target="_blank">
 <i class="fab fa-linkedin"></i>
 </a>
+</div>
+
+<a href="mailto:geetchandrasingha@gmail.com" class="btn">Contact Me</a>
 
 </div>
 
 </div>
 
-</div>
-
-<div class="footer">
-© 2026 Sagolsem Geet Chandra Singha
-</div>
+<div class="footer">© 2026 Geet</div>
 
 <script>
 
-/* COUNTER */
-document.querySelectorAll('.counter').forEach(c=>{
-let target=+c.dataset.target, count=0;
-let step=target/(5000/60);
-function update(){
-count+=step;
-if(count<target){
-c.innerText=Math.ceil(count);
-requestAnimationFrame(update);
-}else c.innerText=target+"+";
+/* ===== FLUID 5-SECOND COUNTER ===== */
+document.querySelectorAll('.counter').forEach(counter => {
+
+let target = +counter.dataset.target;
+let duration = 5000;
+let start = null;
+
+function animate(time) {
+
+if (!start) start = time;
+
+let progress = (time - start) / duration;
+progress = Math.min(progress, 1);
+
+/* smooth easing */
+let ease = 1 - Math.pow(1 - progress, 3);
+
+let value = Math.floor(ease * target);
+
+counter.innerText = value;
+
+if (progress < 1) {
+    requestAnimationFrame(animate);
+} else {
+    counter.innerText = target + "+";
 }
-update();
+
+}
+
+requestAnimationFrame(animate);
+
 });
 
-/* SMOOTH TYPING */
+
+/* ===== TYPING (UNCHANGED) ===== */
 const texts=[
 "I Help Companies Hire Top Tech Talent",
 "I Deliver High-Quality Candidates, Fast",
